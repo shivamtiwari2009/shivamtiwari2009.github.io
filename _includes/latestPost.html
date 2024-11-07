@@ -1,0 +1,35 @@
+{% assign author = site.authors[post.author] %}
+<div class="container mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="grid grid-cols-12 justify-center">
+        <div class="col-span-12 lg:col-span-8 lg:col-start-3 lg:col-end-11 text-center">
+            <h2 class="text-4xl leading-none md:text-[80px] font-bold mb-6">
+                {{ site.title }}
+            </h2>
+            <p class="text-lg font-medium opacity-80 lg:px-12 mb-9">
+                {{ site.description }}
+            </p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-12 items-center mt-12 gap-6 justify-center">
+        <div class="col-span-12">
+            <article>
+                {% for post in site.posts %}
+                {% if post.firstPost == true %}
+                {% include firstPost.html %}
+                {% endif %}
+                {% endfor %}
+            </article>
+        </div>
+
+        {% assign featured_posts = site.posts | where: "featured", true %}
+        {% assign featured_count = featured_posts | size %}
+
+        {% for post in featured_posts %}
+        <div
+            class="col-span-12 md:col-span-6 lg:col-span-4 {% if forloop.last and featured_count % 2 == 1 %}md:col-start-4{% endif %}">
+            {% include postCard.html %}
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="bg-gray-50 py-20">
+    <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <h2 class="text-center text-base/7 font-semibold text-[#313bac]">Our Blog</h2>
+        <p
+            class="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+            Resources and insights</p>
+
+        {% assign recents_posts = site.posts | where: "recentPosts", true %}
+        {% assign recent_count = recents_posts | size %}
+
+        <div class="col-span-12">
+            <div class="grid grid-cols-6 gap-x-6 mt-12">
+                {% for post in recents_posts %}
+                <div
+                    class="col-span-6 md:col-span-3 lg:col-span-2  {% if forloop.last and recent_count % 2 == 1 %}md:col-start-4{% endif %}">
+                    {% include recentBlogs.html %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-span-12">
+            <div class="text-center mt-12">
+                <a href="{{ site.baseurl }}/all_posts"
+                    class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    View All</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,159 @@
+---
+layout: default
+title: Home
+---
+
+{% if page.url == "/" %}
+
+<section class="py-14 md:py-14 bg-white overflow-hidden">
+    {% include latestPost.html %}
+</section>
+
+{% include blogSection.html %}
+
+<div class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto sm:px-6 py-10 sm:py-24 px-6 lg:px-8 md:py-12">
+        <div class="text-center relative">
+            <h1 class="text-3xl text-gray-800 font-bold sm:text-5xl lg:text-4xl lg:leading-tight ">
+                Categories
+            </h1>
+
+            <div class="hidden md:block absolute top-0 end-[44%] -translate-y-12 translate-x-20">
+                <svg class="w-16 h-auto text-orange-500" width="121" height="135" viewBox="0 0 121 135" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164" stroke="currentColor"
+                        stroke-width="10" stroke-linecap="round" />
+                    <path d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5" stroke="currentColor"
+                        stroke-width="10" stroke-linecap="round" />
+                    <path d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874" stroke="currentColor"
+                        stroke-width="10" stroke-linecap="round" />
+                </svg>
+            </div>
+
+            <div class="hidden md:block absolute bottom-0 start-[40%] translate-y-10 -translate-x-32">
+                <svg class="w-40 h-auto text-cyan-500" width="347" height="188" viewBox="0 0 347 188" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4 82.4591C54.7956 92.8751 30.9771 162.782 68.2065 181.385C112.642 203.59 127.943 78.57 122.161 25.5053C120.504 2.2376 93.4028 -8.11128 89.7468 25.5053C85.8633 61.2125 130.186 199.678 180.982 146.248L214.898 107.02C224.322 95.4118 242.9 79.2851 258.6 107.02C274.299 134.754 299.315 125.589 309.861 117.539L343 93.4426"
+                        stroke="currentColor" stroke-width="7" stroke-linecap="round" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="container px-16 md:px-8 lg:px-28">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-16">
+                {% assign categories_list = site.categories %}
+
+                {% if categories_list.first[0] == null %}
+                {% for category in categories_list %}
+                <div class="flex flex-col bg-white border shadow-sm rounded-xl ">
+                    <div class="p-4 md:p-5 flex gap-x-4">
+                        <div class="shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 size-5 text-gray-600"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-9.293-2.707c-.39.39-.39 1.023 0 1.414.39.39 1.023.39 1.414 0l9.586-9.586a.999.999 0 0 0-1.414-1.414l-9.586 9.586zm1.293-3.293 1.293-1.293 2.293 2.293-1.293 1.293-2.293-2.293zm7.707-7.707c0-.256-.098-.512-.293-.707l-5-5c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l3.586 3.586-1.293 1.293-2.293-2.293-1.293 1.293 5.293 5.293c.39.39 1.023.39 1.414 0 .39-.39.39-1.023 0-1.414z" />
+                            </svg>
+                        </div>
+
+                        <div class="grow">
+                            <div class="flex items-center gap-x-2">
+                                <a href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}"
+                                    class="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                                    {{ category | camelcase }}
+                                    </p>
+                            </div>
+                            <div class="mt-1 flex items-center gap-x-2">
+                                <h3 class="text-xl font-medium text-gray-800">
+                                    ({{ site.tags[category].size }})
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                {% for category in categories_list %}
+                <div class="flex flex-col bg-white border shadow-sm rounded-xl ">
+                    <div class="p-4 md:p-5 flex gap-x-4">
+                        <div class="shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 size-5 text-gray-600"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-9.293-2.707c-.39.39-.39 1.023 0 1.414.39.39 1.023.39 1.414 0l9.586-9.586a.999.999 0 0 0-1.414-1.414l-9.586 9.586zm1.293-3.293 1.293-1.293 2.293 2.293-1.293 1.293-2.293-2.293zm7.707-7.707c0-.256-.098-.512-.293-.707l-5-5c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l3.586 3.586-1.293 1.293-2.293-2.293-1.293 1.293 5.293 5.293c.39.39 1.023.39 1.414 0 .39-.39.39-1.023 0-1.414z" />
+                            </svg>
+                        </div>
+
+                        <div class="grow">
+                            <div class="flex items-center gap-x-2">
+                                <a href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}"
+                                    class="
+                                            text-xs font-semibold uppercase tracking-wide text-gray-500 hover:text-gray-600">
+                                    {{ category[0] | camelcase }}
+                                </a>
+                            </div>
+                            <div class="mt-1 flex items-center gap-x-2">
+                                <h3 class="text-xl font-medium text-gray-800">
+                                    {{ category[1].size }}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+
+                {% assign categories_list = nil %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+            <div class="max-w-xl lg:max-w-lg">
+                <h2 class="text-4xl font-semibold tracking-tight text-white">Subscribe to our newsletter</h2>
+                <p class="mt-4 text-lg text-gray-300">Never miss a story from us, subscribe to our newsletter</p>
+                <div class="mt-6 flex max-w-md gap-x-4">
+                    <label for="email-address" class="sr-only">Email address</label>
+                    <input id="email-address" name="email" type="email" autocomplete="email" required
+                        class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                        placeholder="Enter your email">
+                    <button type="submit"
+                        class="flex-none rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Subscribe</button>
+                </div>
+            </div>
+            <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+                <div class="flex flex-col items-start">
+                    <div class="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true" data-slot="icon">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                        </svg>
+                    </div>
+                    <dt class="mt-4 font-semibold text-white">Weekly articles</dt>
+                    <dd class="mt-2 leading-7 text-gray-400">Explore the latest technology advancements and their
+                        impact on various industries. Stay informed about innovations
+                        shaping our future.</dd>
+                </div>
+                <div class="flex flex-col items-start">
+                    <div class="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true" data-slot="icon">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
+                        </svg>
+                    </div>
+                    <dt class="mt-4 font-semibold text-white">No spam</dt>
+                    <dd class="mt-2 leading-7 text-gray-400">Send emails from a reputable email provider and use
+                        your own domain.</dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+</div>
+
+{% endif %}

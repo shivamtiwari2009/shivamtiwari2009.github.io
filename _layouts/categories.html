@@ -1,0 +1,36 @@
+---
+title: "Categories"
+layout: default
+permalink: "/categories.html"
+---
+
+<div class="bg-white text-zinc-900 overflow-hidden relative z-10 ">
+    <div class="container mx-auto max-w-7xl px-6 lg:px-8 md:py-12">
+        <div class="grid grid-cols-12 gap-6">
+            {% for category in site.categories %}
+            <div class="col-span-12">
+                <div class="text-2xl font-semibold">
+                    <h2 id="{{ category[0] | replace: " "," -" }}"
+                        class="tracking-wider mb-1 uppercase relative after:absolute after:bg-[#313BAC] after:w-40 after:h-[3px] after:-bottom-1 after:-translate-x-3/4 ">
+                        Category <span>{{
+                            category[0]
+                            }}</span></h2>
+                </div>
+            </div>
+
+            {% assign pages_list = category[1] %}
+            {% for post in pages_list %}
+            {% if post.title != null %}
+            {% if group == null or group == post.group %}
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                {% include postCard.html %}
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            {% assign pages_list = nil %}
+            {% assign group = nil %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
