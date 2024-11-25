@@ -5,6 +5,7 @@ author: sal
 image: assets/images/16.jpg
 featured: true
 recentPosts: true
+published: false
 categories: [Jekyll, Tutorial]
 ---
 

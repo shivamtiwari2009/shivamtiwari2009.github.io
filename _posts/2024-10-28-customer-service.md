@@ -8,6 +8,7 @@ featured: true
 hidden: true
 rating: 4.5
 recentPosts: true
+published: false
 categories: [Jekyll]
 ---
 
