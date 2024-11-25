@@ -4,6 +4,7 @@ title: "Interview's - What it's like to work remorely in big-sized product devel
 author: sal
 image: assets/images/10.jpg
 firstPost: true
+published: false
 categories: [Web development, Product]
 ---
 

@@ -6,6 +6,7 @@ image: assets/images/12.jpg
 featured: true
 hidden: true
 recentPosts: true
+published: false
 categories: [Tutorial]
 ---
 
