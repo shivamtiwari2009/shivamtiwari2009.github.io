@@ -47,58 +47,60 @@ title: Home
                 {% if categories_list.first[0] == null %}
                 {% for category in categories_list %}
                 <div class="flex flex-col bg-white border shadow-sm rounded-xl ">
-                    <div class="p-4 md:p-5 flex gap-x-4">
-                        <div class="shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 size-5 text-gray-600"
-                                viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-9.293-2.707c-.39.39-.39 1.023 0 1.414.39.39 1.023.39 1.414 0l9.586-9.586a.999.999 0 0 0-1.414-1.414l-9.586 9.586zm1.293-3.293 1.293-1.293 2.293 2.293-1.293 1.293-2.293-2.293zm7.707-7.707c0-.256-.098-.512-.293-.707l-5-5c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l3.586 3.586-1.293 1.293-2.293-2.293-1.293 1.293 5.293 5.293c.39.39 1.023.39 1.414 0 .39-.39.39-1.023 0-1.414z" />
-                            </svg>
-                        </div>
+                    <a href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">
+                        <div class="p-4 md:p-5 flex gap-x-4">
+                            <div class="shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 size-5 text-gray-600"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-9.293-2.707c-.39.39-.39 1.023 0 1.414.39.39 1.023.39 1.414 0l9.586-9.586a.999.999 0 0 0-1.414-1.414l-9.586 9.586zm1.293-3.293 1.293-1.293 2.293 2.293-1.293 1.293-2.293-2.293zm7.707-7.707c0-.256-.098-.512-.293-.707l-5-5c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l3.586 3.586-1.293 1.293-2.293-2.293-1.293 1.293 5.293 5.293c.39.39 1.023.39 1.414 0 .39-.39.39-1.023 0-1.414z" />
+                                </svg>
+                            </div>
 
-                        <div class="grow">
-                            <div class="flex items-center gap-x-2">
-                                <a href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}"
-                                    class="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                    {{ category | camelcase }}
+                            <div class="grow">
+                                <div class="flex items-center gap-x-2">
+                                    <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                                        {{ category | camelcase }}
                                     </p>
-                            </div>
-                            <div class="mt-1 flex items-center gap-x-2">
-                                <h3 class="text-xl font-medium text-gray-800">
-                                    ({{ site.tags[category].size }})
-                                </h3>
+                                </div>
+                                <div class="mt-1 flex items-center gap-x-2">
+                                    <h3 class="text-xl font-medium text-gray-800">
+                                        ({{ site.tags[category].size }})
+                                    </h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 {% endfor %}
                 {% else %}
                 {% for category in categories_list %}
                 <div class="flex flex-col bg-white border shadow-sm rounded-xl ">
-                    <div class="p-4 md:p-5 flex gap-x-4">
-                        <div class="shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 size-5 text-gray-600"
-                                viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-9.293-2.707c-.39.39-.39 1.023 0 1.414.39.39 1.023.39 1.414 0l9.586-9.586a.999.999 0 0 0-1.414-1.414l-9.586 9.586zm1.293-3.293 1.293-1.293 2.293 2.293-1.293 1.293-2.293-2.293zm7.707-7.707c0-.256-.098-.512-.293-.707l-5-5c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l3.586 3.586-1.293 1.293-2.293-2.293-1.293 1.293 5.293 5.293c.39.39 1.023.39 1.414 0 .39-.39.39-1.023 0-1.414z" />
-                            </svg>
-                        </div>
+                    <a href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">
+                        <div class="p-4 md:p-5 flex gap-x-4">
+                            <div class="shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 size-5 text-gray-600"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-9.293-2.707c-.39.39-.39 1.023 0 1.414.39.39 1.023.39 1.414 0l9.586-9.586a.999.999 0 0 0-1.414-1.414l-9.586 9.586zm1.293-3.293 1.293-1.293 2.293 2.293-1.293 1.293-2.293-2.293zm7.707-7.707c0-.256-.098-.512-.293-.707l-5-5c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l3.586 3.586-1.293 1.293-2.293-2.293-1.293 1.293 5.293 5.293c.39.39 1.023.39 1.414 0 .39-.39.39-1.023 0-1.414z" />
+                                </svg>
+                            </div>
 
-                        <div class="grow">
-                            <div class="flex items-center gap-x-2">
-                                <a href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}"
-                                    class="
-                                            text-xs font-semibold uppercase tracking-wide text-gray-500 hover:text-gray-600">
-                                    {{ category[0] | camelcase }}
-                                </a>
-                            </div>
-                            <div class="mt-1 flex items-center gap-x-2">
-                                <h3 class="text-xl font-medium text-gray-800">
-                                    {{ category[1].size }}
-                                </h3>
+                            <div class="grow">
+                                <div class="flex items-center gap-x-2">
+                                    <p
+                                        class="text-xs font-semibold uppercase tracking-wide text-gray-500 hover:text-gray-600">
+                                        {{ category[0] | camelcase }}
+                                    </p>
+                                </div>
+                                <div class="mt-1 flex items-center gap-x-2">
+                                    <h3 class="text-xl font-medium text-gray-800">
+                                        {{ category[1].size }}
+                                    </h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 {% endfor %}
                 {% endif %}
