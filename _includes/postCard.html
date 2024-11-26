@@ -8,8 +8,11 @@
         data-src="{% if post.image contains " ://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{%
         endif %}" alt="{{ post.title }}">
     {% else %}
-    <img src="{% if post.image contains " ://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif
-        %}" alt="{{ post.title }}" class="h-auto w-full rounded-md" />
+    <a href="{{ site.baseurl }}{{ post.url }}">
+        <img src="{% if post.image contains " ://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{%
+            endif %}" alt="{{ post.title }}" class="h-auto w-full rounded-md" />
+    </a>
+
     {% endif %}
     {% endif %}
 
@@ -42,8 +45,8 @@
         <img src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}"
             class="h-10 w-10 rounded-full bg-gray-50">
         {% else %}
-        <img src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}""
-                    class=" h-10 w-10 rounded-full bg-gray-50">
+        <img src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}"
+            class="h-10 w-10 rounded-full bg-gray-50">
         {% endif %}
         <div class="text-sm leading-6">
             <p class="font-semibold text-gray-900">
