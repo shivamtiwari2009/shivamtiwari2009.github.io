@@ -3,7 +3,8 @@ layout: post
 title: "Top Warehouse Management Tips for Sneaker Resellers: Optimize Your Operations for Success"
 author: stackknack.com
 image: assets/images/warehouse-management-tips-for-sneaker-resellers.jpeg
-firstPost: true
+firstPost: false
+recentPosts: true
 categories: [Operations]
 ---
 
