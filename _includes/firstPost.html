@@ -3,7 +3,11 @@
 <div class="grid grid-cols-12 items-center gap-6">
     {% if post.image %}
     <div class="col-span-12 lg:col-span-7">
-        <a href="{{ site.baseurl }}{{ post.url }}">
+        <a href="{{ site.baseurl }}{{ post.url }}" onclick="gtag('event', 'first_post_click', {
+                    event_category: 'First Post',
+                    event_label: 'First Post',
+                    value: 1
+                })">
             <img src="{% if post.image contains " ://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{%
                 endif %}" alt="{{ post.title }}" class="max-w-full h-auto rounded" />
         </a>
@@ -12,7 +16,11 @@
 
     <div class="col-span-12 lg:col-span-5">
         <div class="mt-6 lg:mt-0 lg:pl-6">
-            <a href="{{ site.baseurl }}{{ post.url }}">
+            <a href="{{ site.baseurl }}{{ post.url }}" onclick="gtag('event', 'first_post_click', {
+                    event_category: 'First Post',
+                    event_label: 'First Post',
+                    value: 1
+                })">
                 <h4 class="font-medium text-2xl lg:text-[42px] lg:leading-[58px] mb-2">
                     {{ post.title }}
                 </h4>

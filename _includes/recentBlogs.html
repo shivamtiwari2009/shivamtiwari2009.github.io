@@ -9,8 +9,6 @@
             data-src="{% if post.image contains " ://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{%
             endif %}" alt="{{ post.title }}">
         {% else %}
-        <!-- <img src="{% if post.image contains " ://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{%
-            endif %}" alt="{{ post.title }}" class="w-full" /> -->
         <div class="relative w-full">
             <img src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}"
                 alt="{{ post.title }}" class="w-full">
@@ -24,7 +22,11 @@
                 <time datetime="2020-03-16" class="text-gray-300 font-semibold">{{ post.date | date_to_string }}</time>
             </div>
             <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
-                <a href="{{ site.baseurl }}{{ post.url }}">
+                <a href="{{ site.baseurl }}{{ post.url }}" onclick="gtag('event', '{{ post.title }}_click', {
+                    event_category: '{{ post.title }}_Post',
+                    event_label: '{{ post.title }}_Post',
+                    value: 1
+                })">
                     <span class="absolute inset-0"></span>
                     {{ post.title }}
                 </a>
