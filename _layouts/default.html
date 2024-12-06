@@ -20,13 +20,13 @@
         src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
 
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31D179TL5S"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'G-31D179TL5S');
+        gtag('config', '{{ site.ga_id }}');
     </script>
 </head>
 
