@@ -6,7 +6,7 @@ Your source for the latest in tech innovation, coding insights, and design trend
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`GA_MEASUREMENT_ID`
+`GA_MEASUREMENT_ID` Update this
 
 ## Demo
 
