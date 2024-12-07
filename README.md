@@ -2,6 +2,12 @@
 
 Your source for the latest in tech innovation, coding insights, and design trends — Welcome to the StackKnack Blog.
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`GA_MEASUREMENT_ID`
+
 ## Demo
 
 [Live Demo](https://shivamtiwari2009.github.io/) &nbsp;

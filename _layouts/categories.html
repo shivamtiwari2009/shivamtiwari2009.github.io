@@ -12,9 +12,14 @@ permalink: "/categories.html"
                 <div class="text-2xl font-semibold">
                     <h2 id="{{ category[0] | replace: " "," -" }}"
                         class="tracking-wider mb-1 uppercase relative after:absolute after:bg-[#313BAC] after:w-40 after:h-[3px] after:-bottom-1 after:-translate-x-3/4 ">
-                        Category <span>{{
-                            category[0]
-                            }}</span></h2>
+                        <a href="#{{ category[0] | replace: " ", " -" }}" onclick="gtag('event', '{{ category[0] }}_click', {
+                            event_category: '{{ category[0] }}',
+                            event_label: '{{category[0] }}',
+                            value: 1
+                        })">
+                            Category <span>{{ category[0] }}</span>
+                        </a>
+                    </h2>
                 </div>
             </div>
 
