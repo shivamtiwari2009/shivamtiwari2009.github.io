@@ -3,7 +3,7 @@ layout: post
 title: "Starting a Sneaker Business: A Beginner's Guide"
 author: stackknack.com
 image: assets/images/2024-12-14.jpeg
-firstPost: true
+firstPost: false
 categories: [Operations]
 ---
 
