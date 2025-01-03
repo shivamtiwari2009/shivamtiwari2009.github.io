@@ -3,7 +3,7 @@ layout: post
 title: "Top Sneaker Releases of the Season and Their Resale Potential"
 author: stackknack.com
 image: assets/images/2024-12-15.jpeg
-featured: true
+featured: false
 recentPosts: true
 categories: [Trends]
 ---
