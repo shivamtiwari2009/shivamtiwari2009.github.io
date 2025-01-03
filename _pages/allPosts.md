@@ -1,6 +1,6 @@
 ---
 layout: page
-title:
+title: "All Blogs"
 permalink: /all_posts
 disqus: false
 archive: false

@@ -4,14 +4,14 @@
     <div class="relative">
         {% if post.image %}
         {% if site.lazyimages == "enabled" %}
-        <img class="w-full"
+        <img class="h-auto w-full object-cover rounded-md aspect-[16/9]"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII="
             data-src="{% if post.image contains " ://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{%
             endif %}" alt="{{ post.title }}">
         {% else %}
         <div class="relative w-full">
             <img src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}"
-                alt="{{ post.title }}" class="w-full">
+                alt="{{ post.title }}" class="h-auto w-full object-contain rounded-md aspect-[16/9]">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-80"></div>
         </div>
         {% endif %}
