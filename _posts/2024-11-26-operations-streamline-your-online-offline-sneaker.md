@@ -5,6 +5,7 @@ author: stackknack.com
 image: assets/images/operations-streamline-online-and-offline-sneaker-business.jpeg
 firstPost: false
 recentPosts: true
+featured: true
 categories: [Operations]
 ---
 
